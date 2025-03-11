@@ -38,3 +38,60 @@ This section describes the workflow for identifying and visualizing polyadenine 
 To use BAM files from CellRanger instead of scPathoQuant:
 1. Determine the exact coordinates where your viral genome starts in the combined reference
 2. Use a BAM manipulation tool (samtools or PySam in Python) to extract reads that align to those specific coordinates and beyond
+
+## Processing & Analyzing Reads
+
+This section describes tools for processing raw sequencing data, preparing it for analysis, and aligning it to reference genomes.
+
+### Tools Overview
+
+* **process_fastq.py**: Processes FASTQ files from single-cell RNA-seq, extracting cell barcodes, UMIs, and sequences
+* **trim_t_sequences.py**: Removes leading T nucleotides from sequences in large CSV files
+* **align_hiv_sequences.py**: Aligns processed sequences to an HIV reference genome using Bowtie2
+* **plot_alignment_coverage.py**: Generates coverage depth plots from alignment results
+
+### Read Processing Workflow
+
+1. **Extract Sequence Components** (process_fastq.py)
+   - Parses gzipped FASTQ files and extracts 16bp cell barcodes, 12bp UMIs, and sequence content
+   - Outputs a CSV file with sequence information and quality scores
+   - Processes data in memory-efficient chunks
+
+2. **Trim Leading T's** (trim_t_sequences.py)
+   - Removes leading T nucleotides that may result from polyA capture
+   - Preserves all other sequence information
+   - Handles large files by processing in chunks
+
+3. **Align to Reference** (align_hiv_sequences.py)
+   - Creates reverse complements of sequences
+   - Aligns to HIV reference genome using Bowtie2
+   - Filters for high-quality alignments (MAPQ ≥ 20)
+   - Generates comprehensive alignment statistics
+
+4. **Visualize Coverage** (plot_alignment_coverage.py)
+   - Creates coverage depth plots from alignment results
+   - Parses CIGAR strings to accurately map reads to reference positions
+   - Outputs publication-quality visualization
+
+### ReverseReadIns
+
+The `align_hiv_sequences.py` script implements a reverse-read insertion workflow, which is critical for properly aligning sequences from polyA-captured RNA:
+
+1. **Reverse Complement Creation**
+   - Single-cell RNA-seq with polyA capture produces reads in the opposite orientation to the reference
+   - The script creates reverse complements of all sequences before alignment
+   - This ensures proper alignment to the reference genome
+
+2. **Sequence Validation**
+   - Checks for and filters out invalid sequences
+   - Reports on sequences where reverse complement operations fail
+
+3. **FASTA Generation**
+   - Creates temporary FASTA files with properly formatted headers containing cell and UMI information
+   - Uses the reverse complemented sequences for alignment
+
+4. **Bowtie2 Alignment**
+   - Uses local alignment mode with high sensitivity
+   - Parameters optimized for viral genome mapping
+
+This reverse-read approach is necessary because polyA capture protocols bind to the 3' end of mRNAs, resulting in reads that run in the opposite direction of the reference genome.
