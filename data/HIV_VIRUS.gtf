@@ -1,0 +1,18 @@
+mac239	unknown	exon	1	520	.	+	.	gene_id "5pU3"; transcript_id "5pU3"; gene_name "5pU3"; gene_biotype "protein_coding";
+mac239	unknown	exon	521	694	.	+	.	gene_id "5pR"; transcript_id "5pR"; gene_name "5pR"; gene_biotype "protein_coding";
+mac239	unknown	exon	695	818	.	+	.	gene_id "5pU5"; transcript_id "5pU5"; gene_name "5pU5"; gene_biotype "protein_coding";
+mac239	unknown	exon	819	1052	.	+	.	gene_id "5pUTR"; transcript_id "5pUTR"; gene_name "5pUTR"; gene_biotype "protein_coding";
+mac239	unknown	exon	1053	2585	.	+	.	gene_id "gag"; transcript_id "gag"; gene_name "gag"; gene_biotype "protein_coding";
+mac239	unknown	exon	2555	5407	.	+	.	gene_id "pol"; transcript_id "pol"; gene_name "pol"; gene_biotype "protein_coding";
+mac239	unknown	exon	5340	5984	.	+	.	gene_id "vif"; transcript_id "vif"; gene_name "vif"; gene_biotype "protein_coding";
+mac239	unknown	exon	5812	6150	.	+	.	gene_id "vpx"; transcript_id "vpx"; gene_name "vpx"; gene_biotype "protein_coding";
+mac239	unknown	exon	6151	6456	.	+	.	gene_id "vpr"; transcript_id "vpr"; gene_name "vpr"; gene_biotype "protein_coding";
+mac239	unknown	exon	6302	6597	.	+	.	gene_id "tat"; transcript_id "tat"; gene_name "tat"; exon_number "1"; gene_biotype "protein_coding";
+mac239	unknown	exon	6528	6597	.	+	.	gene_id "rev"; transcript_id "rev"; gene_name "rev"; gene_biotype "protein_coding";
+mac239	unknown	exon	6598	9240	.	+	.	gene_id "env"; transcript_id "env"; gene_name "env"; gene_biotype "protein_coding";
+mac239	unknown	exon	8806	8902	.	+	.	gene_id "tat"; transcript_id "tat"; gene_name "tat"; exon_number "2"; gene_biotype "protein_coding";
+mac239	unknown	exon	8806	9059	.	+	.	gene_id "rev"; transcript_id "rev"; gene_name "rev"; exon_number "2"; gene_biotype "protein_coding";
+mac239	unknown	exon	9077	9868	.	+	.	gene_id "nef"; transcript_id "nef"; gene_name "nef"; gene_biotype "protein_coding";
+mac239	unknown	exon	9462	9981	.	+	.	gene_id "3pU3"; transcript_id "3pU3"; gene_name "3pU3"; gene_biotype "protein_coding";
+mac239	unknown	exon	9982	10155	.	+	.	gene_id "3pR"; transcript_id "3pR"; gene_name "3pR"; gene_biotype "protein_coding";
+mac239	unknown	exon	10156	10279	.	+	.	gene_id "3pU5"; transcript_id "3pU5"; gene_name "3pU5"; gene_biotype "protein_coding";
